@@ -1,0 +1,99 @@
+[
+  {
+    "fault": "Low Current with Normal Voltage",
+    "symptoms": ["low current", "normal voltage", "reduced torque"],
+    "causes": [
+      "weak MOSFET switching",
+      "gate driver IC issue",
+      "bootstrap capacitor degraded",
+      "high ESR DC bus capacitor"
+    ],
+    "tests": [
+      "check gate voltage waveform",
+      "measure PWM signal",
+      "test capacitor ESR"
+    ],
+    "fix": [
+      "replace MOSFET",
+      "replace driver IC",
+      "replace capacitor"
+    ],
+    "probability": 0.85
+  },
+  {
+    "fault": "Dead PCB",
+    "symptoms": ["no output", "no LED", "no response"],
+    "causes": [
+      "blown fuse",
+      "bridge rectifier failure",
+      "SMPS failure",
+      "MOV short circuit"
+    ],
+    "tests": [
+      "continuity check fuse",
+      "measure DC after rectifier (~310V)",
+      "check SMPS output"
+    ],
+    "fix": [
+      "replace fuse",
+      "replace rectifier",
+      "repair SMPS section"
+    ],
+    "probability": 0.92
+  },
+  {
+    "fault": "SMPS Startup Failure",
+    "symptoms": ["no 5V output", "no switching", "dead control section"],
+    "causes": [
+      "startup resistor open",
+      "switching IC failure",
+      "bulk capacitor high ESR"
+    ],
+    "tests": [
+      "check Vcc pin of IC",
+      "measure startup resistor",
+      "check switching waveform"
+    ],
+    "fix": [
+      "replace resistor",
+      "replace IC",
+      "replace capacitor"
+    ],
+    "probability": 0.88
+  },
+  {
+    "fault": "MOV Failure",
+    "symptoms": ["fuse blowing instantly", "burn marks near input"],
+    "causes": [
+      "voltage surge",
+      "MOV short circuit"
+    ],
+    "tests": [
+      "measure resistance across MOV"
+    ],
+    "fix": [
+      "replace MOV",
+      "inspect input stage"
+    ],
+    "probability": 0.80
+  },
+  {
+    "fault": "Overheating MOSFET",
+    "symptoms": ["high temperature", "efficiency drop", "burning smell"],
+    "causes": [
+      "poor switching",
+      "insufficient gate drive",
+      "shorted load"
+    ],
+    "tests": [
+      "check switching waveform",
+      "measure temperature",
+      "inspect load"
+    ],
+    "fix": [
+      "replace MOSFET",
+      "improve gate drive"
+    ],
+    "probability": 0.83
+  }
+]
